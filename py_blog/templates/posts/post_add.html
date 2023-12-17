@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <nav>
+        <h1>
+            <a href="/posts/feeds/">SOOSTAGRAM</a>
+        </h1>
+        <a href="/users/logout/">LOGOUT</a>
+    </nav>
+
+    <div id="post-add">
+        <h1>작성</h1>
+        <form method="POST" enctype="mutipart/form-data">
+            {% csrf_token %}
+            <div>
+                <lable for="id_images">이미지</label>
+                    <input id="id_images" name="images" type="file" mutiple>
+            </div>
+            {{ form.as_p }}
+            <button type="submit">게시</button>
+        </form>
+    </div>
+{% endblock content %}
+

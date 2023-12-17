@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="signup">
+    <form method="POST" enctype="multipart/form-data">
+        <h1>SOOSTAGRAM</h1>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type = "submit" class="btn btn-signup">회원가입</button>
+        <a href="/users/signup/">회원가입 페이지로 이동</a>
+    </form>
+</div>
+{% endblock  %}
+

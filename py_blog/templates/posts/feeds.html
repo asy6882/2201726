@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% block content %}
+<style>
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav ul {
+        list-style: none;
+        display: flex;
+    }
+
+    nav ul li {
+        margin-right: 15px;
+    }
+</style>
+
+<nav>
+    <h1>
+        <a href="/posts/feeds/">SOOSTAGRAM</a>
+    </h1>
+    <ul>
+        <li><a href="/posts/post_add/">Add Post</a></li>
+        <li><a href="/users/logout/">LOGOUT</a></li>
+    </ul>
+</nav>
+
+    <div id="feeds" class="post-container">
+        {% for post in posts %}
+            <article id="post-{{post.id}}" class="post">
+                <header class="post-header">
+                    {% if post.user.profile_image %}
+                        <img src="{{ post.user.profile_image.url }}">
+                    {% endif %}
+                    <span>{{post.user.username}}</span>
+                </header>
+
+                <div class="post-images splide">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            {% for image in post.postimage_set.all %}
+                                {% if image.photo %}
+                                    <li class="splide__slide">
+                                        <img src="{{image.photo.url}}">
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="post-container">
+                    {{post.content|linebreaksbr}}
+                </div>
+
+                <div class="post-buttons">
+                    <button>Likes(0)</buttons>
+                    <span>Commenets</span>
+                </div>
+
+                <div class="post-comments">
+                    <ul>
+                    {% for comment in post.comment_set.all %}
+                        <li>
+                            <span>{{comment.user.username}}</span>
+                            <span>{{comment.content}}</span>
+                        </li>
+                    {% endfor %}
+                    </ul>
+                </div>
+
+                <small>{{post.created}}</small>
+                <div class="post-comment-create">
+                    <form method="POST" action="/posts/comment_add/">
+                        {% csrf_token %}
+                        <input type="hidden" name="post" value="{{post.id}}">
+                        {{ comment_form.content }}
+                        <button type="submit">게시</button>
+                    </form>
+                </div>
+
+                
+
+
+            </article>
+        {% endfor %}
+    </div>
+
+
+
+    <script>
+        const elms = document.getElementsByClassName('splide')
+        for (let i=0; i<elms.length; i++){
+            new Splide(elms[i]).mount();
+        }
+    </script>
+{% endblock  %}
