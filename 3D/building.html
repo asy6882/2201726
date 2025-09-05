@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css\style.css" />
+
+    <div class="top-bar">
+        <span>ID: ____ </span> <span>名前: ____</span>
+        <span>
+            <div class="btn-logout">
+                <button type="button">LOGOUT</button>
+            </div>
+        </span>
+    </div>
+    <h2 class="main-title">3D在庫管理システム</h2>
+</head>
+
+<body>
+
+    </div>
+    <div class="floor-form-group">
+        <div class="form-building">
+            <div class="building-group">
+                <select id="building" name="building">
+                    <option value="">建物</option>
+                    <option value="0">aa</option>
+                    <option value="1">bb</option>
+                    <option value="2">cc</option>
+                    <option value="3">dd</option>
+                    <option value="4">ee</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="img-3D">
+        <a href="listTwo.html">
+            <img src="img\building.png" alt="building" hover-tooltip="3F: A, B, C">>
+        </a>
+    </div>
+
+    <div class="btn-list">
+        <button id="Picton" onclick="location.href='listTwo.html?mode=split'">全リストを照会・検索</button>
+    </div>
+
+    <script>
+        document.querySelectorAll('[hover-tooltip]').forEach(el => {
+            let tooltip;
+
+            el.addEventListener('mouseenter', e => {
+                tooltip = document.createElement('div');
+                tooltip.className = 'tooltip';
+                tooltip.textContent = el.getAttribute('hover-tooltip');
+                document.body.appendChild(tooltip);
+                tooltip.classList.add('show');
+            });
+
+            el.addEventListener('mousemove', e => {
+                if (tooltip) {
+                    tooltip.style.top = e.clientY + 'px';
+                    tooltip.style.left = e.clientX + 'px';
+                }
+            });
+
+            el.addEventListener('mouseleave', e => {
+                if (tooltip) {
+                    tooltip.remove();
+                    tooltip = null;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

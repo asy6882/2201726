@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ログイン</title>
+    <link rel="stylesheet" href="css\style.css" />
+</head>
+
+<body>
+    <div class="login-container">
+        <h2>ログイン</h2>
+
+        <form method="post" action="${pageContext.request.contextPath}/login">
+            <div class="login-input">
+                <label for="login_id">ID</label>
+                <input type="text" id="login_id" name="login_id" required />
+            </div>
+            <div class="login-input">
+                <label for="password">パスワード</label>
+                <input type="password" id="password" name="password" required />
+            </div>
+
+            <div class="login-button-group">
+                <div class="login-button">
+                    <button type="submit">LOGIN</button>
+                </div>
+                <div class="finish-button">
+                    <button type="button" onclick="windowClose()">完了</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+<script>
+    function windowClose() {
+        if (confirm("画面を閉じますか？")) window.close();
+    }
+</script>
+
+</html>

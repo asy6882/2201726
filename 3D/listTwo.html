@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css\style2.css" />
+
+
+</head>
+
+<body>
+    <div class="top-bar">
+        <span>ID: ____ </span> <span>名前: ____</span>
+        <span>
+            <div class="btn-logout">
+                <button type="button">LOGOUT</button>
+            </div>
+        </span>
+    </div>
+
+    <div class="layout" id="layout">
+        <!-- 左側 -->
+        <section class="panel panel-left">
+            <button class="back-btn" onclick="location.href='building.html'">
+                <img src="img/arrow.png" alt="戻る">
+            </button>
+
+            <div class="floor-form-group">
+                <div class="form-building">
+                    <div class="building-group">
+                        <select id="building" name="building">
+                            <option value="">建物</option>
+                            <option value="0">aa</option>
+                            <option value="1">bb</option>
+                            <option value="2">cc</option>
+                            <option value="3">dd</option>
+                            <option value="4">ee</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-floor">
+                    <div class="floor-group">
+                        <select id="floor" name="floor">
+                            <option value="">フロア</option>
+                            <option value="0">1F</option>
+                            <option value="1">2F</option>
+                            <option value="2">3F</option>
+                            <option value="3">4F</option>
+                            <option value="4">5F</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="floor-search-btn">
+                    <button type="button" id="openRightBtn">検索</button>
+                </div>
+            </div>
+
+            <div class="floor-info">
+                <h3 class="main-title">aaビル 3F</h3>
+
+                <div class="floor-container">
+                    <div class="img-floor">
+                        <img id="floorImage" src="img/floor.png" alt="floor">
+                    </div>
+                    <table class="sList-table">
+                        <thead>
+                            <tr>
+                                <th>リスト</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>A</td>
+                            </tr>
+                            <tr>
+                                <td>B</td>
+                            </tr>
+                            <tr>
+                                <td>C</td>
+                            </tr>
+                            <tr>
+                                <td>D</td>
+                            </tr>
+                            <tr>
+                                <td>E</td>
+                            </tr>
+                            <tr>
+                                <td>F</td>
+                            </tr>
+                            <tr>
+                                <td>G</td>
+                            </tr>
+                            <tr>
+                                <td>H</td>
+                            </tr>
+                            <tr>
+                                <td>I</td>
+                            </tr>
+                            <tr>
+                                <td>J</td>
+                            </tr>
+                            <tr>
+                                <td>K</td>
+                            </tr>
+                            <tr>
+                                <td>L</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                            </tr>
+                            <tr>
+                                <td>&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+        <div class="divider"></div>
+        <!-- 右側 -->
+        <aside class="panel panel-right">
+            <button class="back-btn" id="closeRightBtn" title="戻る">
+                <img src="img/back.png" alt="戻る">
+            </button>
+
+            <div class="search-panel">
+                <div class="form-block">
+                    <select id="building2" name="building2">
+                        <option value="">建物</option>
+                        <option value="0">aa</option>
+                        <option value="1">bb</option>
+                        <option value="2">cc</option>
+                        <option value="3">dd</option>
+                        <option value="4">ee</option>
+                    </select>
+                </div>
+
+                <div class="form-block">
+                    <select id="floor2" name="floor2">
+                        <option value="">フロア</option>
+                        <option value="0">1F</option>
+                        <option value="1">2F</option>
+                        <option value="2">3F</option>
+                        <option value="3">4F</option>
+                        <option value="4">5F</option>
+                    </select>
+                </div>
+
+                <div class="form-block">
+                    <select id="numberSelect" name="numberSelect">
+                        <option value="">番号</option>
+                        <option value="0">1</option>
+                        <option value="1">2</option>
+                        <option value="2">3</option>
+                        <option value="3">4</option>
+                        <option value="4">5</option>
+                    </select>
+                </div>
+
+                <div class="form-block">
+                    <input type="text" id="productCode" name="productCode" placeholder="商品コード">
+                </div>
+
+                <div class="form-block">
+                    <select id="categorySelect" name="categorySelect">
+                        <option value="">カテゴリー</option>
+                        <option value="0">a</option>
+                        <option value="1">b</option>
+                        <option value="2">c</option>
+                        <option value="3">d</option>
+                        <option value="4">e</option>
+                    </select>
+                </div>
+
+                <div class="form-block">
+                    <select id="itemSelect" name="itemSelect">
+                        <option value="">品目</option>
+                        <option value="0">aa</option>
+                        <option value="1">bb</option>
+                        <option value="2">cc</option>
+                        <option value="3">dd</option>
+                        <option value="4">ee</option>
+                    </select>
+                </div>
+
+                <div class="form-block">
+                    <input type="text" id="productName" name="productName" placeholder="商品名">
+                </div>
+
+                <div class="form-block search-button">
+                    <button id="searchBtn" class="search-btn">検索</button>
+                </div>
+            </div>
+
+            <table class="result-table table-fill">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>商品コード</th>
+                        <th>カテゴリー</th>
+                        <th>品目</th>
+                        <th>商品名</th>
+                        <th>建物</th>
+                        <th>階</th>
+                        <th>エリア</th>
+                        <th>番号</th>
+                        <th>価格</th>
+                        <th>製造会社</th>
+                        <th>数量</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="radio" name="pick" value="P001"></td>
+                        <td>P001</td>
+                        <td>文具</td>
+                        <td>ペン</td>
+                        <td>ボールペン</td>
+                        <td>aaビル</td>
+                        <td>3F</td>
+                        <td>A</td>
+                        <td>3</td>
+                        <td>120</td>
+                        <td>ABC社</td>
+                        <td>50</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="pick" value="P002"></td>
+                        <td>P002</td>
+                        <td>文具</td>
+                        <td>ノート</td>
+                        <td>スケッチブック</td>
+                        <td>aaビル</td>
+                        <td>3F</td>
+                        <td>B</td>
+                        <td>7</td>
+                        <td>300</td>
+                        <td>XYZ社</td>
+                        <td>20</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div id="pagination" class="pagination"></div>
+
+            <div class="btn-container">
+                <button id="createBtn" class="create-btn">登録</button>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        const layout = document.getElementById('layout');
+        const params = new URLSearchParams(window.location.search);
+        if (params.get("mode") === "split") {
+            layout.classList.add("show-list");
+        }
+        document.getElementById('floorImage')?.addEventListener('click', () => layout.classList.add('show-list'));
+        document.getElementById('openRightBtn')?.addEventListener('click', () => layout.classList.add('show-list'));
+
+        document.getElementById('closeRightBtn')?.addEventListener('click', () => layout.classList.remove('show-list'));
+    </script>
+
+</body>
